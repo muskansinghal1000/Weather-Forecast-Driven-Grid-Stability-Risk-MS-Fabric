@@ -1,2 +1,2 @@
 # Weather-Forecast-Driven-Grid-Stability-Risk-MS-Fabric
-Predict grid instability using weather forecasts to support proactive energy planning and operational resilience.
+Predictive Grid Stability Risk Using Weather Forecasts in Microsoft Fabric
