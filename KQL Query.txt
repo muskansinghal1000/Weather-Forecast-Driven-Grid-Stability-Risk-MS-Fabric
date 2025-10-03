@@ -1,0 +1,30 @@
+
+external_table('Gold_DimCity')
+| join kind=inner     (
+    external_table('gold_weatherdata_current_shortcutDelta')
+    | project CityId, Sunrise, Sunset
+) on $left.CityId == $right.CityId
+| project CityId, CityName, Latitude, Longitude, Country, Population, TimeZone, Sunrise, Sunset
+
+
+
+
+
+
+
+
+
+
+union (
+      external_table('Gold_FactWeatherForecast')
+    | project Temperature, FeelsLike, Pressure_SeaLevel ,Pressure_GroundLevel, Humidity, WeatherID, 
+      Cloudiness, WindSpeed, WindDirection, Visibility, WeatherDate,
+      CityId, WeatherDay
+), 
+(
+     external_table('gold_weatherdata_current_shortcutDelta')
+    | extend WeatherDate = todatetime(Data_Timestamp_UTC)
+    //| extend ParsedDate = todatetime(datetime(Data_Timestamp_UTC, "yyyy-MM-dd HH:mm:ss"))
+    | project Temperature, FeelsLike, Pressure_SeaLevel, Pressure_GroundLevel, Humidity,WeatherID,Cloudiness,
+     WindSpeed, WindDirection, Visibility, WeatherDate ,CityId, WeatherDay
+)
