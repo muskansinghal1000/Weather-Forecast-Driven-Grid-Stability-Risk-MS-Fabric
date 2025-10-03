@@ -22,5 +22,8 @@ This project leverages Microsoft Fabric to analyze and predict grid stability ri
 
 <img width="955" height="501" alt="image" src="https://github.com/user-attachments/assets/7f56e643-f12d-4a78-bebb-7dcf306d51ef" />
 
+<img width="799" height="380" alt="image" src="https://github.com/user-attachments/assets/f885eea3-7acb-44e2-a707-a3f7d5acf673" />
+
+
 
 
